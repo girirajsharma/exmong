@@ -1,0 +1,275 @@
+div#index(data-role='page')
+  div(data-role='header')
+    h1 Test Simulator
+    a.ui-btn-left(href='#add', data-icon='plus') Add
+    a.ui-btn-right(href='/', data-icon='home', rel='external') Home
+
+  div(data-role='content')
+    ul#questionlist(data-role='listview', data-inset='true')
+      - for(var index=0; index<questions.length; index++) {
+        li
+          a(href='#view', id=questions[index]._id)
+            p=questions[index].content
+      - }
+
+  div.ui-bar(data-role='footer', data-position='fixed')
+    a#create-btn(href='/generate', data-role='button', data-icon='create', rel='external') Create PDF
+
+div#add(data-role='page')
+  div(data-role='header')
+    a(data-rel='back', data-icon='back', data-derection='reverse') Back
+    h1  Add Question
+
+  div(data-role='content')
+    div(data-role='filedcontain')
+      label(for='question-add-content') Question
+      textarea#question-add-content
+
+  div(data-role='optionA')
+    div(data-role='filedcontain')
+      label(for='question-add-optionA') Option A
+      textarea#question-add-optionA
+
+  div(data-role='optionB')
+    div(data-role='filedcontain')
+      label(for='question-add-optionB') OPtion B
+      textarea#question-add-optionB
+
+  div(data-role='optionC')
+    div(data-role='filedcontain')
+      label(for='question-add-optionC') Option C
+      textarea#question-add-optionC
+
+  div(data-role='optionD')
+    div(data-role='filedcontain')
+      label(for='question-add-optionD') Option D
+      textarea#question-add-optionD
+
+  div(data-role='correctOption')
+    div(data-role='filedcontain')
+      label(for='question-add-correct-option') Correct Option
+      textarea#question-add-correct-option
+
+  div(data-role='difficultyLevel')
+    div(data-role='filedcontain')
+      label(for='question-add-difficulty-level') Difficulty Level
+      textarea#question-add-difficulty-level
+
+  div.ui-bar(data-role='footer', data-position='fixed')
+    a#save-abtn(href='#', data-icon='check') Save
+
+div#view(data-role='page')
+  div(data-role='header')
+    a(data-rel='back', data-icon='back', data-derection='reverse') Back
+    h1 View Question
+    a(href='#add', data-icon='plus') Add
+
+  div(data-role='content')
+    div(data-role='filedcontain')
+      label(for='question-view-content') Question
+      p#question-view-content
+
+  div(data-role='optionA')
+    div(data-role='filedcontain')
+      label(for='question-view-optionA') Option A 
+      p#question-view-optionA
+
+  div(data-role='optionB')
+    div(data-role='filedcontain')
+      label(for='question-view-optionB') Option B
+      p#question-view-optionB
+
+  div(data-role='optionC')
+    div(data-role='filedcontain')
+      label(for='question-view-optionC') Option C
+      p#question-view-optionC
+
+  div(data-role='optionD')
+    div(data-role='filedcontain')
+      label(for='question-view-optionD') Option D
+      p#question-view-optionD
+
+  div(data-role='correctOption')
+    div(data-role='filedcontain')
+      label(for='question-view-correct-option') Correct option
+      p#question-view-correct-option
+
+  div(data-role='difficultyLevel')
+    div(data-role='filedcontain')
+      label(for='question-view-difficulty-level') Difficulty level
+      p#question-view-difficulty-level
+
+  div.ui-bar(data-role='footer', data-position='fixed')
+    div(data-role='controlgroup', data-type='horizontal')
+      a(href='#edit', data-icon='gear', data-transition='flip') Edit
+      a(href='#confirm-dialog', data-icon='delete', data-rel='dialog') Delete
+
+div#edit(data-role='page')
+  div(data-role='header')
+    a(data-rel='back', data-icon='back', data-derection='reverse') Back
+    h1 Edit Question
+    a(href='#add', data-icon='plus') Add
+
+  div(data-role='content')
+    div(data-role='filedcontain')
+      label(for='question-edit-content') Question
+      textarea#question-edit-content
+
+  div(data-role='optionA')
+    div(data-role='filedcontain')
+      label(for='question-edit-optionA') Option A 
+      textarea#question-edit-optionA
+
+  div(data-role='optionB')
+    div(data-role='filedcontain')
+      label(for='question-edit-optionB') Option B
+      textarea#question-edit-optionB
+
+  div(data-role='optionC')
+    div(data-role='filedcontain')
+      label(for='question-edit-optionC') Option C
+      textarea#question-edit-optionC
+
+  div(data-role='optionD')
+    div(data-role='filedcontain')
+      label(for='question-edit-optionD') Option D
+      textarea#question-edit-optionD
+
+  div(data-role='correctOption')
+    div(data-role='filedcontain')
+      label(for='question-edit-correct-option') Correct option
+      textarea#question-edit-correct-option
+
+  div(data-role='difficultyLevel')
+    div(data-role='filedcontain')
+      label(for='question-edit-difficulty-level') Difficulty level
+      textarea#question-edit-difficulty-level
+
+  div.ui-bar(data-role='footer', data-position='fixed')
+    a#save-ebtn(href='#', data-icon='check') Save
+
+div#msg-dialog(data-role='page')
+  div(data-role='header')
+    h1 Message
+  div(data-role='content')
+    p#message
+    a(href='#index', data-role='button') OK
+
+div#info-dialog(data-role='page')
+  div(data-role='header')
+    h1 About
+  div(data-role='content')
+    p
+    | This is a RESTful Test Generator Application using Node.js, jQuery Mobile, MongoDB, mongoose, express and jade.
+
+div#confirm-dialog(data-role='page')
+  div(data-role='header')
+    h1 Confirm
+  div(data-role='content')
+    p Are you sure you want to delete the item?
+    a#del-btn(href='#', data-role='button') Delete
+
+script
+  var mstore = {};
+
+  $(function() {
+    $("#questionlist").delegate('a', 'click', function(e) {
+      mstore.selectedid = this.id;
+    });
+
+    $("#index").bind('pagebeforeshow', function(e, ui) {
+      $.get(
+        'question/list'
+        , function(data) {
+            $("#questionlist").empty();
+            for(var index=0; index < data.length; index++) {
+              $("#questionlist").append('<li><a href="#view" id="' + data[index]._id + '"><p>' + data[index].content + '</p></a></li>');
+            }
+            $("#questionlist").listview('refresh');
+          }
+        );
+    });
+
+    $("#add").bind('pagebeforeshow', function(e, ui) {
+      $("#question-add").val(' ');
+    });
+
+    $("#view").bind('pagebeforeshow', function(e, ui) {
+      $("#question-view").html(' ');
+      $.get(
+        'question/' + mstore.selectedid
+        , function(data) {
+            $("#question-view-content").html(data.content);
+            $("#question-view-optionA").html(data.optionA);
+            $("#question-view-optionB").html(data.optionB);
+            $("#question-view-optionC").html(data.optionC);
+            $("#question-view-optionD").html(data.optionD);
+            $("#question-view-correct-option").html(data.correctOption);
+            $("#question-view-difficulty-level").html(data.difficultyLevel);
+          }
+        );
+    });
+
+    $("#edit").bind('pagebeforeshow', function(e, ui) {
+      $("#question-edit").val(' ');
+      $.get(
+        'question/' + mstore.selectedid
+        , function(data) {
+            $("#question-edit-content").val(data.content);
+            $("#question-edit-optionA").html(data.optionA);
+            $("#question-edit-optionB").html(data.optionB);
+            $("#question-edit-optionC").html(data.optionC);
+            $("#question-edit-optionD").html(data.optionD);
+            $("#question-edit-correct-option").html(data.correctOption);
+            $("#question-edit-difficulty-level").html(data.difficultyLevel);
+          }
+        );
+    });
+
+    $("#save-abtn").bind('click', function(e) {
+      $.post(
+        'question'
+        , { content : $("#question-add-content").val(),
+            optionA : $("#question-add-optionA").val(),
+            optionB : $("#question-add-optionB").val(),
+            optionC : $("#question-add-optionC").val(),
+            optionD : $("#question-add-optionD").val(),
+            correctOption : $("#question-add-correct-option").val(),
+            difficultyLevel : $("#question-add-difficulty-level").val()
+         }
+        , onSuccess
+        , 'json'
+      );
+    });
+
+    $("#save-ebtn").bind('click', function(e) {
+      $.ajax({
+        type : 'PUT'
+        , url : 'question/' + mstore.selectedid
+        , data : {    
+            content : $("#question-edit-content").val(),
+            optionA : $("#question-edit-optionA").val(),
+            optionB : $("#question-edit-optionB").val(),
+            optionC : $("#question-edit-optionC").val(),
+            optionD : $("#question-edit-optionD").val(),
+            correctOption : $("#question-edit-correct-option").val(),
+            difficultyLevel : $("#question-edit-difficulty-level").val()
+        }
+        , success : onSuccess
+        , dataType : 'json'
+      });
+    });
+
+    $("#del-btn").bind('click', function(e) {
+      $.ajax({
+        type : 'DELETE'
+        , url : 'question/' + mstore.selectedid
+        , success : onSuccess
+      });
+    });
+
+    function onSuccess(data) {
+      $("#message").html(data.message);
+      $.mobile.changePage('#msg-dialog', {transition : 'slidedown', role : 'dialog'});
+    };
+  });

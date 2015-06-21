@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Test Generator</title>
+</head>
+<body>
+<h2 style="text-align: center;"><span style="color:#0000FF;"><a href="/question">Test Generator&nbsp;Application(Node.js, express/jade, mongodb/mongoose and jQuery Mobile)</a></span></h2>
+
+<hr />
+<p><a href="/question"><img alt="" src="http://blog.appdynamics.com/wp-content/uploads/2013/01/Information2.jpg" style="width: 369px; height: 271px; float: right;" /></a></p>
+
+<p>Holla guys,</p>
+
+<p>This is a simple demo application for generating a test paper pdf by selecting some random questions from the database. It exploits express at back end and jquery mobile for end users with mongo as a database.</p>
+
+<p><span style="color:#0000CD;"><span style="font-size:22px;"><u>Rest API :</u></span></span></p>
+
+<p><code><span style="color:#0000FF;">GET /</span> : Renders the index page</code></p>
+
+<p><code><span style="color:#0000FF;">GET /question</span> : Lists all the questions present in database</code></p>
+
+<p><code><span style="color:#0000FF;">POST /question</span> : Persists a question record into database</code></p>
+
+<p><code><span style="color:#0000FF;">PUT /question/{id}</span> : Updates&nbsp;a question record into database</code></p>
+
+<p><code><span style="color:#0000FF;">DELETE /question/{id}</span> : Deletes a question record from database</code></p>
+
+<p><code><span style="color:#0000FF;">GET /question/list</span> : Returns json representation of all the questions which can be further used&nbsp;as per&nbsp;requiremnets</code></p>
+
+<p><code><span style="color:#0000FF;">GET /question/{id}</span> : Returns json representation of a single question</code></p>
+
+<p><code><span style="color:#0000FF;">GET /generate</span> : Generates a pdf in the root directory by randomly selecting a set of questions</code></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>
