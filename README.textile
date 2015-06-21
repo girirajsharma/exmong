@@ -35,3 +35,6 @@ bc. :~$ cd exmong
 :~/exmong$ node app.js
 
 bc. browse to http://localhost:3000
+
+Nightly builds can be seen at https://travis-ci.org/girirajsharma/exmong/builds
+Help make Open Source a better place and start building better software today!
