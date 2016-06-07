@@ -1,9 +1,13 @@
 {
-    "name": "node-crud"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.0"
-    , "jade": ">= 0.0.1"
+    "name": "node-crud",
+    "version": "0.0.1",
+    "private": true,
+
+    "dependencies": {
+       "express": "2.5.0",
+       "jade": ">= 0.0.1",
+       "mongoose" : "4.4.20",
+       "bson" : "0.4.23",
+       "html-pdf" : "2.0.1"
   }
 }

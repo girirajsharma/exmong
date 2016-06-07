@@ -3,7 +3,7 @@
  */
 var express = require('express')
   , mongoose = require('mongoose')
-  , mongodb = require('mongodb')
+  , BSONPure = require('bson').BSONPure
   , fs = require('fs')
   , pdf = require('html-pdf')
 
@@ -30,7 +30,7 @@ app.configure('production', function(){
 
 // Model
 
-var ObjectId = mongodb.BSONPure.ObjectID;
+var ObjectId = BSONPure.ObjectID;
 var Schema = mongoose.Schema;
 
 var Question = new Schema({
